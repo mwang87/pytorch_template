@@ -42,5 +42,7 @@ print('Predictions:', y_pred)
 # Save the model
 #torch.save(tinymodel.state_dict(), 'tinymodel.pth')
 #torch.save(tinymodel, 'tinymodel.pt')
+
+tinymodel.eval()
 traced_model = torch.jit.trace(tinymodel, torch.randn(1))
 torch.jit.save(traced_model, "model.pt")
